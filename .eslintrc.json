@@ -32,7 +32,10 @@
       "camelcase": "off",
       "@typescript-eslint/ban-types": "off",
       "no-use-before-define": "off",
+      "react/prop-types": "off",
       "prettier/prettier": "error",
+      "no-alert": "off",
+      "jsx-a11y/label-has-associated-control": "off",
       "import/extensions": [
         "error",
         "ignorePackages",
