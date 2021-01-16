@@ -7,7 +7,6 @@ import { usePlaces } from '../../hooks/placesContext';
 
 interface ModalProps {
   onCloseModal(): void;
-  // eslint-disable-next-line no-unused-vars
   identifier: string;
 }
 
@@ -20,13 +19,19 @@ const Modal: React.FC<ModalProps> = ({ onCloseModal, identifier }) => {
   const onHandleSubmit = (evt: FormEvent) => {
     evt.preventDefault();
 
-    const id = identifier;
+    if (place === '' || goal === '') {
+      alert('Voce deve preencher todos os campos');
+    } else {
+      const id = identifier;
 
-    const newPlace = place;
+      const newPlace = place;
 
-    const newGoal = goal;
+      const newGoal = goal;
 
-    editPlace(id, newPlace, newGoal);
+      editPlace(id, newPlace, newGoal);
+
+      onCloseModal();
+    }
   };
   return (
     <Container>

@@ -20,13 +20,6 @@ interface Countries {
   flag: string;
 }
 
-export interface Place {
-  id: string;
-  country: string;
-  flag: string;
-  place: string;
-  goal: string;
-}
 const App: React.FC = () => {
   const [items, setItems] = useState<Countries[]>([]);
   const [country, setCountry] = useState('');
@@ -48,29 +41,33 @@ const App: React.FC = () => {
   const handleSubmit = (evt: FormEvent) => {
     evt.preventDefault();
 
-    const id = uuid();
+    if (country === '' || place === '' || goal === '') {
+      alert('Voce deve preencher todos os campos');
+    } else {
+      const id = uuid();
 
-    let flag = '';
-    setGoal('s');
-    items.map(item => {
-      if (item.translations.pt === country) {
-        flag = item.flag;
-      }
-      return flag;
-    });
+      let flag = '';
+      setGoal('s');
+      items.map(item => {
+        if (item.translations.pt === country) {
+          flag = item.flag;
+        }
+        return flag;
+      });
 
-    addPlace({
-      id,
-      country,
-      flag,
-      place,
-      goal,
-    });
+      addPlace({
+        id,
+        country,
+        flag,
+        place,
+        goal,
+      });
 
-    alert('Lugar adicionado com sucesso!');
+      alert('Lugar adicionado com sucesso!');
 
-    setCountry('');
-    setPlace('');
+      setCountry('');
+      setPlace('');
+    }
   };
 
   const onOpenModal = (id: string) => {

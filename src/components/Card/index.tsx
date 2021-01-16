@@ -4,13 +4,11 @@ import { Container, Header, Content } from './styles';
 import EditIcon from '../../assets/editar.png';
 import DeleteIcon from '../../assets/excluir.png';
 
-import { Place } from '../../App';
+import { Place } from '../../hooks/placesContext';
 
 interface CardProps {
   place: Place;
-  // eslint-disable-next-line no-unused-vars
   onHandleDelete(data: string): void;
-  // eslint-disable-next-line no-unused-vars
   onOpenModal(data: string): void;
 }
 
