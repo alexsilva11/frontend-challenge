@@ -1,16 +1,25 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
 import api from '../services/api';
 
-import { Place } from '../App';
+export interface Place {
+  id: string;
+  country: string;
+  flag: string;
+  place: string;
+  goal: string;
+}
 
 interface PlacesContextData {
   places: Place[];
-  // eslint-disable-next-line no-unused-vars
   addPlace({ id, country, flag, place, goal }: Place): void;
-  // eslint-disable-next-line no-unused-vars
   editPlace(id: string, place: string, goal: string): void;
-  // eslint-disable-next-line no-unused-vars
   deletePlace(id: string): void;
 }
 
@@ -28,37 +37,46 @@ export const PlacesProvider: React.FC = ({ children }) => {
     loadPlaces();
   }, []);
 
-  const addPlace = ({ id, country, flag, place, goal }: Place) => {
-    const data = {
-      id,
-      country,
-      flag,
-      place,
-      goal,
-    };
+  const addPlace = useCallback(
+    ({ id, country, flag, place, goal }: Place) => {
+      const data = {
+        id,
+        country,
+        flag,
+        place,
+        goal,
+      };
 
-    api.post('places', data);
+      api.post('places', data);
 
-    setPlaces([...places, data]);
-  };
+      setPlaces([...places, data]);
+    },
+    [places],
+  );
 
-  const editPlace = (id: string, place: string, goal: string) => {
-    const foundPlace = places.find(p => p.id === id);
+  const editPlace = useCallback(
+    (id: string, place: string, goal: string) => {
+      const editedPlace = places.find(p => p.id === id);
 
-    const editedPlace = { ...foundPlace, place, goal };
+      setPlaces(places.map(p => (p.id === id ? { ...p, place, goal } : p)));
 
-    console.log(editedPlace);
-  };
+      api.put(`/places/${id}`, { ...editedPlace, place, goal });
+    },
+    [places],
+  );
 
-  const deletePlace = (id: string) => {
-    const newPlaces = places.filter(p => {
-      return p.id !== id;
-    });
+  const deletePlace = useCallback(
+    (id: string) => {
+      const newPlaces = places.filter(p => {
+        return p.id !== id;
+      });
 
-    setPlaces(newPlaces);
+      setPlaces(newPlaces);
 
-    api.delete(`/places/${id}`);
-  };
+      api.delete(`/places/${id}`);
+    },
+    [places],
+  );
 
   return (
     <PlacesContext.Provider

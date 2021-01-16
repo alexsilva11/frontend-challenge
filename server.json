@@ -1,25 +1,11 @@
 {
   "places": [
     {
-      "id": "52fd44be-397f-4840-a552-16aa4c1606fd",
-      "country": "Canadá",
-      "flag": "https://restcountries.eu/data/can.svg",
-      "place": "Vancouver",
-      "goal": "12/2021"
-    },
-    {
-      "id": "ca9a0965-7f9b-4130-b7a4-8c60cb54654f",
-      "country": "Argentina",
-      "flag": "https://restcountries.eu/data/arg.svg",
-      "place": "Buenos Aires",
-      "goal": "03/2022"
-    },
-    {
       "id": "e7d00fb6-468f-4bb0-94d8-0d0bd93d19c9",
       "country": "Bolívia",
       "flag": "https://restcountries.eu/data/bol.svg",
-      "place": "Salar de Uyuni",
-      "goal": "02/2022"
+      "place": "Cochabamba",
+      "goal": "12/2022"
     },
     {
       "id": "6bbd69cd-0455-4fc9-b675-28d224dec03a",
@@ -27,6 +13,20 @@
       "flag": "https://restcountries.eu/data/chl.svg",
       "place": "Pucon",
       "goal": "05/2025"
+    },
+    {
+      "id": "bbdc3f02-c281-4785-9127-4a53b26899ad",
+      "country": "áustria",
+      "flag": "https://restcountries.eu/data/aut.svg",
+      "place": "Cidade",
+      "goal": "02/2022"
+    },
+    {
+      "id": "94666602-5952-42c6-9f4a-55e1a75f8fb5",
+      "country": "Brasil",
+      "flag": "https://restcountries.eu/data/bra.svg",
+      "place": "Arraial do Cabo",
+      "goal": "12/2021"
     }
   ]
 }
