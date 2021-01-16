@@ -57,25 +57,25 @@ Quando o usuário clicar em "Adicionar", o formulário deverá ser resetado e o 
 - Ao finalizar o desafio, o candidato deverá enviar um email para jobs@clubpetro.com.br contendo o link do seu PR.
 
 
-### Como executar a aplicação
+# Como executar a aplicação
 
-# Clone o projeto com o seguinte comando:
+### Clone o projeto com o seguinte comando:
 
-'git clone https://github.com/alexsilva11/frontend-challenge.git'
+`git clone https://github.com/alexsilva11/frontend-challenge.git`
 
-# Instale todas as dependencias
+### Instale todas as dependencias
 
-'npm install ou yarn install'
+`npm install ou yarn install`
 
-# Inicie a fake api
+### Inicie a fake api
 
-'npm json-server server.json -p 3333'
+`npm json-server server.json -p 3333`
 
 ou
 
-'yarn json-server server.json -p 3333'
+`yarn json-server server.json -p 3333`
 
-# Inicie a aplicação
+### Inicie a aplicação
 
-'npm start ou yarn start'
+`npm start ou yarn start`
 
