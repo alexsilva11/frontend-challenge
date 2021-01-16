@@ -5,6 +5,7 @@
     },
     "extends": [
         "plugin:react/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "airbnb",
         "prettier/@typescript-eslint",
@@ -32,10 +33,13 @@
       "camelcase": "off",
       "@typescript-eslint/ban-types": "off",
       "no-use-before-define": "off",
+      "no-unused-expressions": "off",
       "react/prop-types": "off",
       "prettier/prettier": "error",
       "no-alert": "off",
       "jsx-a11y/label-has-associated-control": "off",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "error",
       "import/extensions": [
         "error",
         "ignorePackages",
